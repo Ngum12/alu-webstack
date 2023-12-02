@@ -34,14 +34,14 @@ defaults
         option forwardfor
         option http-server-close
 
-frontend besthor_front_end
+frontend Ngum12_front_end
     bind *:80
     bind *:443 ssl crt /etc/letsencrypt/live/www.aagraxon.tech/www.aagraxon.tech.pem
     http-request redirect scheme https unless { ssl_fc }
     http-request set-header X-Forwarded-Proto https
     default_backend besthor_back_end
 
-backend besthor_back_end
+backend Ngum12_back_end
     balance roundrobin
 
     server 5827-web-01 54.152.254.93:80 check
